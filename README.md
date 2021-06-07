@@ -8,3 +8,4 @@
 4. **Remove an Existing Notes using command** node app.js remove --title={title}
 ![image](https://github.com/sumitgupta7132/BlackNotes/blob/master/Img/notes-1.png)
 ![image](https://github.com/sumitgupta7132/BlackNotes/blob/master/Img/2-notes.png)
+#### Stores data in a json file
