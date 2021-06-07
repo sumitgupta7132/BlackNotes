@@ -11,9 +11,11 @@ const addNotes = (title, body) => {
       body: body,
     });
     saveNotes(notes);
-    console.log(chalk.bgGreen.black("Succes! Note Added"));
+    console.log(chalk.bgGreen.black(`Succes! Your Note is Added`));
   } else {
-    console.log(chalk.bgRed("Failed! title taken"));
+    console.log(
+      chalk.bgRed.black("Failed! title taken try adding with another title")
+    );
   }
 };
 const saveNotes = (notes) => {
@@ -39,9 +41,14 @@ const loadNotes = () => {
 };
 const listNotes = () => {
   const notes = loadNotes();
-  console.log(chalk.bgGreen.black("Listing Your Notes"));
-  for (let i = 0; i < notes.length; i++) {
-    console.log(chalk.magenta(`${i + 1} ${notes[i].title}`));
+  if (notes.length > 0) {
+    console.log(chalk.bgGreen.black("Listing Your Notes"));
+    for (let i = 0; i < notes.length; i++) {
+      console.log(chalk.magenta(`${i + 1} ${notes[i].title}`));
+    }
+  } else {
+    console.log(chalk.bgRed.black("No Notes Found!"));
+    console.log(chalk.bgGreen.black("Add your First Note"));
   }
 };
 const readNotes = (title) => {
